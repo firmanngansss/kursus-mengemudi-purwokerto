@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, Clock3, CreditCard, MapPin, MessageCircle, Phone, Quote, ShieldCheck, Star, Users, Wallet, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,7 +8,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import logoBaru from "./assets/logo-baru.jpg";
 
-const logoSrc = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYHBgcICAcKCwoLCg8ODAwODxYQERAREBYiFRkVFRkVIh4kHhweJB42KiYmKjY+NDI0PkxERExfWl98fKcBBgYGBgcGBwgIBwoLCgsKDw4MDA4PFhAREBEQFiIVGRUVGRUiHiQeHB4kHjYqJiYqNj40MjQ+TERETF9aX3x8p//CABEIBkAGQAMBIgACEQEDEQH/xAAvAAEBAAMBAQEAAAAAAAAAAAAAAQQFBgMCBwEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAALpgAAAgAAAAAKCAAAAAAAAAAAoAAAAIACggACwAAAAAoCwlgAVABZRFAAAAAAAAAAAKQWCAVBUqoIAAAAAAAAACgAgAKAAACAAAAAAAAAAoAAAICgAAAAAAAAgKAAAAAAAAAAAAAAAAAAAACAAAAAACkUQAKACFEUQoAAAAAAAAAAAAAAABFEURQQtikUgKAlJFgAAAACgAAAAAAAAAAAgKAAAAAAAAAAAAAACAoAAAAAAAICgAAAAAAAAAAAAAAgAAAAAAAAKAUSgAAlAAICgAAgAABBUFAAAAAAAACgRSRYALC0hUoggAAAAKAAAAAAAAAACAAAAAAAAAAAoAAAAICgAAAAAAAAAAAAAAAAAAAAAgAAAAAAAKAUSgAAAAAAACAAAAAAAoAIAAAAACgAAAAAAJRFiLBYAAAAAAKAAAAAAAAACAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAsKKSgAAAAAACAAAAAAAAAAAoAIAAAAAAAAACgAAAAAJRFJAAAAAAoAAAAAAAAAAIAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAKACCgKAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAACURYLCAAAAoAAAAAAAIAAAAAAAAAACgAAAAgKAAAAAAAAAAAAAAAAAAACAAAoAoAAAACAAAAAAAAAAAAAAAAoAAAAAIAAAAAAAAAAAAAACgAAJRFiAAAAoAAAAAIAAAAAAAAAAAACggAKAAAAAAAAAAAAAAAAAAACAAoAApKAAAACUgAAAAAAAAKAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAoAACURYgAAKAAAACAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAIAAACgCgAAAEogAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAoAAJFEAAACgAgAAAAAAAAAAAAAAAAKCAAoAAAAAAAAAAAAIAAACgCkoAASiAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAABKAKAlECAAAoAAIAAAAAAAAAAACggAKCAoAAAAAAAAAAAAAIAACgCoCgAJSAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAACgARYgAAAKAACAAAAAAAAAAoIAAACgAAAAAAAAAAAAgAKAAoAACCiAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAASqAAlECAAAoAIAAAAAAAAACggAKCAAoAAAAAAAAAAAICgAKAABKgAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACLQkAACgAgAAKACAAAAAoIACggKAAAAAAAAAAACAAoIooAhQgAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAASoUKAlECAAoAIACgAgAAAKACAAoICgAAAAAAAAAAgAAqywUAAIAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAKlECAAoAAAIAAAACgAgAKCAAoAAAAIAAAACggpKKAIKIAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAABKAqURYgAKAAAACAAAAoAAAIAAAAAAAAAAACgiigCIoAAAAAAoAAAAAAAAAAAAAAAAAAAAApFEURRFEURRFEUkUsAAAAAAAAAAAAAAAAAAAAAAACAAAAAAqUQICgAAAAgAAAKACAoIAAAAAAAAAAACqAAgogAAAAKAAAAAAAAAAAAAAAAAAUSiAAoAAAAAAAAAAAAAEURRAAAAAAAAAAAAAAAAAAAAgAACUAoAECAAoAAIAACgAgAAAAAAAAAAAAACigAAgAAAAAKAAAAAAAAAAAAAAAKSiAoAAAAAAAAAAAAAAAAAAAACURYAAAAAAAAAAAAAAAAAAgAACUAoCUQIACgAgAAKAACAFgAAAAAAAAACqAAAIAAAAACgAAAAAAAAAAAAAFAICgAAAAAAAAAAAAAAAAAAAAAAAAJRFEAAAAAAAAAAAAAAAACAAACFSqAlgCAoAAICgAAAAWUQIAAAAAAAAKoAAIAAAAACgAAAAAAAAAACkURQAAAAAAAAAAAAAAAAAAACAAoAAAAAAAACURYAAAAAAAAAAAAAAAAgAAAhQoEWAICgAAAAAAAUCCAAAAAAACgKAQlAAAAACgAAAAAAAAAAAUAICgAAAAAAAgKAAAAAAAAAAAACAAAoAAAAAAACUQAAAAAAAAAAAAAAIAAAAACgQIACgAAAAAAUECAAAALKQACigASiAAAAAoAAAAAAAAAAACgCAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEUQAAAAAAAAAAAAAIAAAlBKoCUQIACgAAAAAUCWIAAABUACygKASoAAAACgAAAAAAAAAACkoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJRAAAAAAAAAAAAAAgAAAAKAlgCAoAAAAAFQlCwIAAoAsKgKACAAAAAoAAAAAAAAAAAoCAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEWAAAAAAAAAAAAAIAABKhQoECAAoAAAAAIAAABQoEoAASiAAAAAoAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFgAAAAAAAAAAAACAAJQSqAlECAoAAAABYgAApFAKSgAAIAAAACgAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEWAAAAAAAAAAAAIAAAIUKBFgAAAAABZRFCWIooAgogKACAAAAoAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFgAAAAAAAAAAACAAAAoCUQICgAAAUAhZRKACKAAAgAAAKAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARYAAAAAAAAAAAgAACWFCgRYgAKAABQhKoAAgoAAAgAAAKAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARYAAAAAAAAAAgAAAEsoCpRAgKAABQgKAAQlAASgAAAAKAAAAA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[...truncated for size...]";
 
 const LogoMark = ({ className = "h-20 md:h-24 w-auto" }) => (
   <img
@@ -109,13 +108,13 @@ export default function EliteDrivingAcademyWebsite() {
 
   const whatsappMessage = useMemo(() => {
     const text = `Halo Elite Driving Academy, saya ingin memesan kursus mengemudi.%0A%0A` +
-      `Nama: ${form.name || "-"}%0A` +
-      `No. WhatsApp: ${form.phone || "-"}%0A` +
+      `Nama: ${encodeURIComponent(form.name || "-")}%0A` +
+      `No. WhatsApp: ${encodeURIComponent(form.phone || "-")}%0A` +
       `Paket: ${form.packageName}%0A` +
       `Jadwal: ${form.schedule}%0A` +
       `Transmisi: ${form.transmission}%0A` +
-      `Alamat Jemput: ${form.pickup || "-"}%0A` +
-      `Catatan: ${form.notes || "-"}%0A%0A` +
+      `Alamat Jemput: ${encodeURIComponent(form.pickup || "-")}%0A` +
+      `Catatan: ${encodeURIComponent(form.notes || "-")}%0A%0A` +
       `Mohon info langkah pembayaran dan konfirmasi jadwal. Terima kasih.`;
 
     return `https://wa.me/${waNumber}?text=${text}`;
@@ -161,7 +160,7 @@ export default function EliteDrivingAcademyWebsite() {
               </Button>
             </div>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
               {features.map((item, idx) => {
                 const Icon = item.icon;
                 return (
@@ -453,44 +452,44 @@ export default function EliteDrivingAcademyWebsite() {
             <CardContent className="p-6 md:p-8">
               <div className="grid gap-5 md:grid-cols-2">
                 <div className="md:col-span-2">
-                  <label className="mb-2 block text-sm font-semibold">Nama lengkap</label>
-                  <Input value={form.name} onChange={(e) => onChange("name", e.target.value)} placeholder="Masukkan nama lengkap" className="h-12 rounded-2xl" />
+                  <label htmlFor="nama" className="mb-2 block text-sm font-semibold">Nama lengkap</label>
+                  <Input id="nama" name="nama" autoComplete="name" value={form.name} onChange={(e) => onChange("name", e.target.value)} placeholder="Masukkan nama lengkap" className="h-12 rounded-2xl" />
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-semibold">Nomor WhatsApp</label>
-                  <Input value={form.phone} onChange={(e) => onChange("phone", e.target.value)} placeholder="08xxxxxxxxxx" className="h-12 rounded-2xl" />
+                  <label htmlFor="telepon" className="mb-2 block text-sm font-semibold">Nomor WhatsApp</label>
+                  <Input id="telepon" name="telepon" type="tel" inputMode="tel" autoComplete="tel" value={form.phone} onChange={(e) => onChange("phone", e.target.value)} placeholder="08xxxxxxxxxx" className="h-12 rounded-2xl" />
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-semibold">Pilih paket</label>
-                  <select value={form.packageName} onChange={(e) => onChange("packageName", e.target.value)} className="h-12 w-full rounded-2xl border border-input bg-background px-3 text-sm">
+                  <label htmlFor="paket-pilihan" className="mb-2 block text-sm font-semibold">Pilih paket</label>
+                  <select id="paket-pilihan" name="paket" value={form.packageName} onChange={(e) => onChange("packageName", e.target.value)} className="h-12 w-full rounded-2xl border border-input bg-background px-3 text-sm">
                     {packages.map((pkg) => (
                       <option key={pkg.name} value={pkg.name}>{pkg.name}</option>
                     ))}
                   </select>
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-semibold">Jadwal</label>
-                  <select value={form.schedule} onChange={(e) => onChange("schedule", e.target.value)} className="h-12 w-full rounded-2xl border border-input bg-background px-3 text-sm">
+                  <label htmlFor="jadwal" className="mb-2 block text-sm font-semibold">Jadwal</label>
+                  <select id="jadwal" name="jadwal" value={form.schedule} onChange={(e) => onChange("schedule", e.target.value)} className="h-12 w-full rounded-2xl border border-input bg-background px-3 text-sm">
                     <option value="Weekday">Weekday</option>
                     <option value="Weekend">Weekend</option>
                     <option value="Fleksibel">Fleksibel</option>
                   </select>
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-semibold">Transmisi</label>
-                  <select value={form.transmission} onChange={(e) => onChange("transmission", e.target.value)} className="h-12 w-full rounded-2xl border border-input bg-background px-3 text-sm">
+                  <label htmlFor="transmisi" className="mb-2 block text-sm font-semibold">Transmisi</label>
+                  <select id="transmisi" name="transmisi" value={form.transmission} onChange={(e) => onChange("transmission", e.target.value)} className="h-12 w-full rounded-2xl border border-input bg-background px-3 text-sm">
                     <option value="Manual">Manual</option>
                     <option value="Matic">Matic</option>
                     <option value="Belum tahu">Belum tahu</option>
                   </select>
                 </div>
                 <div className="md:col-span-2">
-                  <label className="mb-2 block text-sm font-semibold">Alamat jemput / area latihan</label>
-                  <Input value={form.pickup} onChange={(e) => onChange("pickup", e.target.value)} placeholder="Contoh: Purwokerto Timur" className="h-12 rounded-2xl" />
+                  <label htmlFor="alamat" className="mb-2 block text-sm font-semibold">Alamat jemput / area latihan</label>
+                  <Input id="alamat" name="alamat" autoComplete="street-address" value={form.pickup} onChange={(e) => onChange("pickup", e.target.value)} placeholder="Contoh: Purwokerto Timur" className="h-12 rounded-2xl" />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="mb-2 block text-sm font-semibold">Catatan tambahan</label>
-                  <Textarea value={form.notes} onChange={(e) => onChange("notes", e.target.value)} placeholder="Misalnya: belum pernah nyetir, ingin fokus parkir, dll." className="min-h-[120px] rounded-2xl" />
+                  <label htmlFor="catatan" className="mb-2 block text-sm font-semibold">Catatan tambahan</label>
+                  <Textarea id="catatan" name="catatan" value={form.notes} onChange={(e) => onChange("notes", e.target.value)} placeholder="Misalnya: belum pernah nyetir, ingin fokus parkir, dll." className="min-h-[120px] rounded-2xl" />
                 </div>
               </div>
             </CardContent>
@@ -501,8 +500,8 @@ export default function EliteDrivingAcademyWebsite() {
               <CardContent className="p-6 md:p-8">
                 <h3 className="text-2xl font-black">Ringkasan pesanan</h3>
                 <div className="mt-6 space-y-3 text-sm">
-                  <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Nama</span><span className="font-semibold">{form.name || "-"}</span></div>
-                  <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Nomor WA</span><span className="font-semibold">{form.phone || "-"}</span></div>
+                  <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Nama</span><span className="min-w-0 break-words text-right font-semibold">{form.name || "-"}</span></div>
+                  <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Nomor WA</span><span className="min-w-0 break-words text-right font-semibold">{form.phone || "-"}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Paket</span><span className="font-semibold">{form.packageName}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Jadwal</span><span className="font-semibold">{form.schedule}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Transmisi</span><span className="font-semibold">{form.transmission}</span></div>
