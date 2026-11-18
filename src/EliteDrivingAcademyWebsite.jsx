@@ -29,6 +29,8 @@ export default function EliteDrivingAcademyWebsite() {
   });
 
   const waNumber = "6287734799346";
+  const mapsUrl = "https://maps.app.goo.gl/j4EeCusHbb7MkGhg9";
+  const isMobilPribadi = form.packageName === "Mobil Pribadi";
 
   const packages = [
     {
@@ -113,7 +115,9 @@ export default function EliteDrivingAcademyWebsite() {
       `Paket: ${form.packageName}%0A` +
       `Jadwal: ${form.schedule}%0A` +
       `Transmisi: ${form.transmission}%0A` +
-      `Alamat Jemput: ${encodeURIComponent(form.pickup || "-")}%0A` +
+      (isMobilPribadi
+        ? `Alamat Jemput: ${encodeURIComponent(form.pickup || "-")}%0A`
+        : `Lokasi Latihan: ${encodeURIComponent(mapsUrl)}%0A`) +
       `Catatan: ${encodeURIComponent(form.notes || "-")}%0A%0A` +
       `Mohon info langkah pembayaran dan konfirmasi jadwal. Terima kasih.`;
 
@@ -443,7 +447,7 @@ export default function EliteDrivingAcademyWebsite() {
           <div className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-700">Form pemesanan</div>
           <h2 className="mt-2 text-3xl font-black md:text-4xl">Isi data, lalu lanjut pembayaran lewat WhatsApp</h2>
           <p className="mx-auto mt-4 max-w-3xl leading-8 text-slate-600">
-            Form ini dibuat supaya admin menerima data lebih rapi: nama, nomor, pilihan paket, jadwal, transmisi, dan alamat jemput. Sesekali teknologi memang bisa dipakai untuk hal yang benar.
+            Form ini dibuat supaya admin menerima data lebih rapi: nama, nomor, pilihan paket, jadwal, transmisi, dan lokasi latihan (alamat jemput hanya untuk paket Mobil Pribadi). Sesekali teknologi memang bisa dipakai untuk hal yang benar.
           </p>
         </div>
 
@@ -483,10 +487,26 @@ export default function EliteDrivingAcademyWebsite() {
                     <option value="Belum tahu">Belum tahu</option>
                   </select>
                 </div>
-                <div className="md:col-span-2">
-                  <label htmlFor="alamat" className="mb-2 block text-sm font-semibold">Alamat jemput / area latihan</label>
-                  <Input id="alamat" name="alamat" autoComplete="street-address" value={form.pickup} onChange={(e) => onChange("pickup", e.target.value)} placeholder="Contoh: Purwokerto Timur" className="h-12 rounded-2xl" />
-                </div>
+                {isMobilPribadi ? (
+                  <div className="md:col-span-2">
+                    <label htmlFor="alamat" className="mb-2 block text-sm font-semibold">Alamat jemput</label>
+                    <Input id="alamat" name="alamat" autoComplete="street-address" value={form.pickup} onChange={(e) => onChange("pickup", e.target.value)} placeholder="Alamat lengkap, contoh: Sokaraja, Banyumas" className="h-12 rounded-2xl" />
+                    <p className="mt-2 text-xs leading-5 text-slate-500">Khusus paket Mobil Pribadi (area Banyumas). Isi alamat selengkap mungkin supaya admin mudah konfirmasi.</p>
+                  </div>
+                ) : (
+                  <div className="md:col-span-2">
+                    <div className="mb-2 block text-sm font-semibold">Lokasi latihan</div>
+                    <div className="flex flex-col gap-3 rounded-2xl border border-emerald-900/10 bg-emerald-50/60 p-4 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+                        <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
+                        <span>Latihan dilakukan di tempat latihan kami sesuai lokasi di Google Maps. Paket ini tidak ada layanan jemput.</span>
+                      </div>
+                      <a href={mapsUrl} target="_blank" rel="noreferrer" className="shrink-0 text-sm font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-900">
+                        Lihat di Maps
+                      </a>
+                    </div>
+                  </div>
+                )}
                 <div className="md:col-span-2">
                   <label htmlFor="catatan" className="mb-2 block text-sm font-semibold">Catatan tambahan</label>
                   <Textarea id="catatan" name="catatan" value={form.notes} onChange={(e) => onChange("notes", e.target.value)} placeholder="Misalnya: belum pernah nyetir, ingin fokus parkir, dll." className="min-h-[120px] rounded-2xl" />
@@ -505,6 +525,7 @@ export default function EliteDrivingAcademyWebsite() {
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Paket</span><span className="font-semibold">{form.packageName}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Jadwal</span><span className="font-semibold">{form.schedule}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Transmisi</span><span className="font-semibold">{form.transmission}</span></div>
+                  <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>{isMobilPribadi ? "Alamat jemput" : "Lokasi"}</span><span className="min-w-0 break-words text-right font-semibold">{isMobilPribadi ? form.pickup || "-" : "Tempat latihan (Maps)"}</span></div>
                 </div>
                 <Button asChild className="mt-6 w-full rounded-2xl bg-yellow-300 py-6 text-base font-bold text-slate-900 hover:bg-yellow-200">
                   <a href={whatsappMessage} target="_blank" rel="noreferrer">
