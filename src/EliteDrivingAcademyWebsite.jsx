@@ -99,7 +99,7 @@ export default function EliteDrivingAcademyWebsite() {
     {
       icon: Users,
       title: "Instruktur ramah",
-      text: "Penjelasan dibuat sederhana, langsung praktik, tidak dibuat ribet seperti hidup manusia pada umumnya.",
+      text: "Penjelasan dibuat sederhana dan langsung praktik, jadi pemula pun bisa ikut dengan santai tanpa merasa tertekan.",
     },
     {
       icon: Clock3,
@@ -227,7 +227,7 @@ export default function EliteDrivingAcademyWebsite() {
             <h2 className="mt-2 text-3xl font-black md:text-4xl">Pilih paket yang cocok untuk ritme belajarmu</h2>
           </div>
           <p className="max-w-2xl text-slate-600">
-            Semua paket tersedia untuk weekday dan weekend. Tinggal pilih intensitas latihan yang sesuai. Manusia memang suka menunda, tapi setidaknya pilihan paketnya kami buat jelas.
+            Semua paket tersedia untuk weekday dan weekend. Tinggal pilih intensitas latihan yang sesuai dengan kebutuhanmu, dan atur jadwalnya sesuai waktu luangmu.
           </p>
         </div>
 
@@ -270,7 +270,7 @@ export default function EliteDrivingAcademyWebsite() {
               <div className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-700">Kenapa pilih kami</div>
               <h2 className="mt-2 text-3xl font-black md:text-4xl">Belajar dari dasar sampai lebih percaya diri di jalan</h2>
               <p className="mt-4 text-slate-600 leading-8">
-                Program dirancang untuk membantu peserta memahami kontrol kendaraan, etika berkendara, latihan area, hingga kesiapan menghadapi kondisi jalan nyata. Tidak asal suruh gas dan rem lalu berharap semesta bekerja sama.
+                Program dirancang untuk membantu peserta memahami kontrol kendaraan, etika berkendara, latihan area, hingga kesiapan menghadapi kondisi jalan nyata. Setiap sesi didampingi instruktur, jadi kamu belajar bertahap dan tahu persis apa yang sedang dilatih.
               </p>
 
               <div className="mt-8 grid gap-4">
@@ -289,7 +289,7 @@ export default function EliteDrivingAcademyWebsite() {
                   <CreditCard className="h-9 w-9 text-emerald-700" />
                   <h3 className="mt-4 text-xl font-black">Payment via WhatsApp</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Setelah isi form, pengguna langsung diarahkan ke WhatsApp admin untuk konfirmasi paket dan pembayaran. Cepat, familiar, dan tidak perlu drama akun tambahan.
+                    Setelah mengisi form, kamu langsung terhubung ke WhatsApp admin untuk konfirmasi paket dan pembayaran. Cepat, mudah, dan tanpa perlu membuat akun.
                   </p>
                 </CardContent>
               </Card>
@@ -330,7 +330,7 @@ export default function EliteDrivingAcademyWebsite() {
           <div className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-700">Testimoni</div>
           <h2 className="mt-2 text-3xl font-black md:text-4xl">Cerita dari peserta</h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-600 leading-8">
-            Bukti sosial, karena manusia kadang baru percaya setelah melihat manusia lain juga berhasil.
+            Pengalaman peserta yang sudah belajar bersama kami, dari yang benar-benar baru mulai sampai yang akhirnya berani menyetir sendiri.
           </p>
         </div>
 
