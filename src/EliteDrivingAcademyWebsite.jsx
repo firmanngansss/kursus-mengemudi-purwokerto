@@ -70,7 +70,7 @@ export default function EliteDrivingAcademyWebsite() {
     "Free drink & candies",
     "Materi lengkap, tinggal ikutin",
     "Instruktur Gen-Z, gampang nyambung",
-    "Area latihan lengkap",
+    "Area latihan luas",
     "Weekday & weekend, bebas pilih",
   ];
 
@@ -402,7 +402,7 @@ export default function EliteDrivingAcademyWebsite() {
                 </div>
                 <h3 className="mt-5 text-2xl font-black">Lokasi Google Maps</h3>
                 <p className="mt-4 max-w-lg leading-8 text-white/85">
-                  Lokasi kursus udah ada di Google Maps. Tinggal klik buat lihat titiknya, buka rute, dan navigasi tanpa nebak-nebak alamat.
+                  Latihan di area parkir Tirta Kembar yang luas, jadi nyaman buat pemula. Klik buat lihat titiknya, buka rute, dan navigasi tanpa nebak-nebak alamat.
                 </p>
 
                 <div className="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-white p-2 shadow-lg shadow-black/10">
@@ -506,7 +506,7 @@ export default function EliteDrivingAcademyWebsite() {
                     <div className="flex flex-col gap-3 rounded-2xl border border-emerald-900/10 bg-emerald-50/60 p-4 sm:flex-row sm:items-center sm:justify-between">
                       <div className="flex items-start gap-3 text-sm leading-6 text-slate-700">
                         <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
-                        <span>Latihannya di tempat latihan kami, lokasinya ada di Google Maps. Paket ini nggak ada layanan jemput.</span>
+                        <span>Latihannya di area parkir Tirta Kembar yang luas, titiknya ada di Google Maps. Paket ini nggak ada layanan jemput.</span>
                       </div>
                       <a href={mapsUrl} target="_blank" rel="noreferrer" className="shrink-0 text-sm font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-900">
                         Lihat di Maps
@@ -532,7 +532,7 @@ export default function EliteDrivingAcademyWebsite() {
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Paket</span><span className="font-semibold">{form.packageName}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Jadwal</span><span className="font-semibold">{form.schedule}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Transmisi</span><span className="font-semibold">{transmission}</span></div>
-                  <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>{isMobilPribadi ? "Alamat jemput" : "Lokasi"}</span><span className="min-w-0 break-words text-right font-semibold">{isMobilPribadi ? form.pickup || "-" : "Tempat latihan (Maps)"}</span></div>
+                  <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>{isMobilPribadi ? "Alamat jemput" : "Lokasi"}</span><span className="min-w-0 break-words text-right font-semibold">{isMobilPribadi ? form.pickup || "-" : "Area parkir Tirta Kembar"}</span></div>
                 </div>
                 <Button asChild className="mt-6 w-full rounded-2xl bg-yellow-300 py-6 text-base font-bold text-slate-900 hover:bg-yellow-200">
                   <a href={whatsappMessage} target="_blank" rel="noreferrer">
