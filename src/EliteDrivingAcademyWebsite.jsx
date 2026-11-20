@@ -39,39 +39,39 @@ export default function EliteDrivingAcademyWebsite() {
       name: "Basic",
       price: "Rp299.000",
       sessions: "4x pertemuan / 4 jam",
-      desc: "Cocok untuk pemula yang ingin belajar dasar mengemudi dengan tempo santai.",
+      desc: "Baru banget mau belajar nyetir? Mulai dari sini. Pelan-pelan aja, no pressure, dasar-dasarnya beres.",
       highlight: "Mulai hemat",
     },
     {
       name: "Gold",
       price: "Rp499.000",
       sessions: "6x pertemuan / 6 jam",
-      desc: "Pilihan paling seimbang untuk latihan lebih stabil sampai percaya diri di jalan.",
+      desc: "Pilihan paling pas buat kamu yang mau latihan lebih mantap sampai berani gas di jalan beneran.",
       highlight: "Paling diminati",
     },
     {
       name: "Premium",
       price: "Rp749.000",
       sessions: "8x pertemuan / 8 jam",
-      desc: "Untuk yang ingin latihan lebih intensif dan siap berkendara lebih mandiri.",
+      desc: "Mau cepat luwes dan siap nyetir sendiri? Latihannya lebih intens, jam terbangnya lebih banyak.",
       highlight: "Super promo",
     },
     {
       name: "Mobil Pribadi",
       price: "Rp280.000",
       sessions: "4x pertemuan / 4 jam",
-      desc: "Belajar pakai mobil pribadi manual atau matic. Area Banyumas.",
+      desc: "Belajar langsung pakai mobil sendiri, manual atau matic. Khusus area Banyumas.",
       highlight: "Lebih hemat",
     },
   ];
 
   const benefits = [
-    "Harga terjangkau",
+    "Harga ramah di kantong",
     "Free drink & candies",
-    "Materi lengkap",
-    "Instruktur Gen-Z yang komunikatif",
+    "Materi lengkap, tinggal ikutin",
+    "Instruktur Gen-Z, gampang nyambung",
     "Area latihan lengkap",
-    "Weekday & weekend tersedia",
+    "Weekday & weekend, bebas pilih",
   ];
 
   const testimonials = [
@@ -95,18 +95,18 @@ export default function EliteDrivingAcademyWebsite() {
   const features = [
     {
       icon: ShieldCheck,
-      title: "Belajar dengan aman",
-      text: "Pendekatan latihan bertahap supaya peserta tidak panik saat mulai mengemudi.",
+      title: "Aman, nggak bikin panik",
+      text: "Latihan dibuat bertahap, jadi kamu nggak perlu panik walau baru pertama kali pegang setir.",
     },
     {
       icon: Users,
-      title: "Instruktur ramah",
-      text: "Penjelasan dibuat sederhana dan langsung praktik, jadi pemula pun bisa ikut dengan santai tanpa merasa tertekan.",
+      title: "Instruktur yang asik",
+      text: "Dijelasin pakai bahasa yang gampang dicerna, langsung praktik. Tanya apa aja boleh, nggak ada yang dihakimi.",
     },
     {
       icon: Clock3,
       title: "Jadwal fleksibel",
-      text: "Tersedia weekday dan weekend, jadi tidak perlu berantem dulu dengan jadwal kuliah atau kerja.",
+      text: "Ada weekday dan weekend, jadi jadwal kuliah atau kerjamu tetap aman.",
     },
   ];
 
@@ -154,7 +154,7 @@ export default function EliteDrivingAcademyWebsite() {
             </motion.h1>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700">
-              Belajar mobil manual atau matic dengan instruktur yang sabar, jadwal fleksibel, dan sistem pemesanan langsung lewat WhatsApp. Praktis dan cepat.
+              Belajar nyetir bareng instruktur Gen-Z yang sabar dan gampang nyambung. Jadwal fleksibel, booking cukup lewat WhatsApp. Praktis, nggak ribet.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -195,7 +195,7 @@ export default function EliteDrivingAcademyWebsite() {
                 <Badge className="rounded-full bg-yellow-300 px-3 py-1 text-slate-900 hover:bg-yellow-300">Promo aktif</Badge>
                 <h2 className="mt-4 text-3xl font-black">Mulai dari Rp280.000</h2>
                 <p className="mt-3 text-white/90">
-                  Paket belajar untuk pemula sampai yang ingin latihan lebih intensif. Bisa weekday maupun weekend.
+                  Dari yang belum pernah pegang setir sampai yang mau makin lancar, ada paketnya. Weekday atau weekend, kamu yang atur.
                 </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   <div className="rounded-2xl bg-white/10 p-4 backdrop-blur">
@@ -226,10 +226,10 @@ export default function EliteDrivingAcademyWebsite() {
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-700">Paket harga</div>
-            <h2 className="mt-2 text-3xl font-black md:text-4xl">Pilih paket yang cocok untuk ritme belajarmu</h2>
+            <h2 className="mt-2 text-3xl font-black md:text-4xl">Pilih paket sesuai gaya belajarmu</h2>
           </div>
           <p className="max-w-2xl text-slate-600">
-            Semua paket tersedia untuk weekday dan weekend. Tinggal pilih intensitas latihan yang sesuai dengan kebutuhanmu, dan atur jadwalnya sesuai waktu luangmu.
+            Semua paket bisa weekday atau weekend. Pilih seintens apa kamu mau latihan, jadwalnya ngikutin waktu luangmu.
           </p>
         </div>
 
@@ -270,9 +270,9 @@ export default function EliteDrivingAcademyWebsite() {
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
             <div>
               <div className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-700">Kenapa pilih kami</div>
-              <h2 className="mt-2 text-3xl font-black md:text-4xl">Belajar dari dasar sampai lebih percaya diri di jalan</h2>
+              <h2 className="mt-2 text-3xl font-black md:text-4xl">Dari nol sampai pede di jalan</h2>
               <p className="mt-4 text-slate-600 leading-8">
-                Program dirancang untuk membantu peserta memahami kontrol kendaraan, etika berkendara, latihan area, hingga kesiapan menghadapi kondisi jalan nyata. Setiap sesi didampingi instruktur, jadi kamu belajar bertahap dan tahu persis apa yang sedang dilatih.
+                Kamu bakal belajar kontrol mobil, etika berkendara, latihan area, sampai siap hadapi kondisi jalan beneran. Tiap sesi didampingi instruktur, jadi kamu belajar bertahap dan tahu persis apa yang lagi dilatih.
               </p>
 
               <div className="mt-8 grid gap-4">
@@ -289,9 +289,9 @@ export default function EliteDrivingAcademyWebsite() {
               <Card className="rounded-[2rem] border-0 bg-[linear-gradient(145deg,#fffdf8_0%,#f1fbf5_100%)] shadow-lg shadow-emerald-900/5">
                 <CardContent className="p-6">
                   <CreditCard className="h-9 w-9 text-emerald-700" />
-                  <h3 className="mt-4 text-xl font-black">Payment via WhatsApp</h3>
+                  <h3 className="mt-4 text-xl font-black">Booking & bayar via WhatsApp</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Setelah mengisi form, kamu langsung terhubung ke WhatsApp admin untuk konfirmasi paket dan pembayaran. Cepat, mudah, dan tanpa perlu membuat akun.
+                    Isi form, klik tombol, langsung nyambung ke WhatsApp admin buat konfirmasi paket dan bayar. Tanpa bikin akun, tanpa ribet.
                   </p>
                 </CardContent>
               </Card>
@@ -300,7 +300,7 @@ export default function EliteDrivingAcademyWebsite() {
                   <Phone className="h-9 w-9 text-emerald-700" />
                   <h3 className="mt-4 text-xl font-black">Admin responsif</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Pengunjung bisa langsung menghubungi admin untuk tanya jadwal, area latihan, ketersediaan instruktur, atau kebutuhan khusus lainnya.
+                    Mau tanya jadwal, area latihan, instruktur, atau punya request khusus? Chat aja admin kami.
                   </p>
                 </CardContent>
               </Card>
@@ -309,16 +309,16 @@ export default function EliteDrivingAcademyWebsite() {
                   <MapPin className="h-9 w-9 text-emerald-700" />
                   <h3 className="mt-4 text-xl font-black">Area Purwokerto & Banyumas</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Lokasi layanan disesuaikan dengan area operasional, termasuk opsi belajar menggunakan mobil pribadi di area Banyumas.
+                    Kami melayani Purwokerto dan Banyumas. Mau latihan pakai mobil sendiri? Bisa, khusus area Banyumas.
                   </p>
                 </CardContent>
               </Card>
               <Card className="rounded-[2rem] border-0 bg-[linear-gradient(145deg,#fffdf8_0%,#f1fbf5_100%)] shadow-lg shadow-emerald-900/5">
                 <CardContent className="p-6">
                   <Star className="h-9 w-9 text-emerald-700" />
-                  <h3 className="mt-4 text-xl font-black">Pengalaman belajar nyaman</h3>
+                  <h3 className="mt-4 text-xl font-black">Belajar yang nyaman</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Ada materi lengkap, free drink & candies, serta suasana belajar yang dibuat santai supaya peserta tidak tegang terus.
+                    Ada materi lengkap, free drink & candies, dan suasana belajar yang santai biar kamu nggak tegang terus.
                   </p>
                 </CardContent>
               </Card>
@@ -332,7 +332,7 @@ export default function EliteDrivingAcademyWebsite() {
           <div className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-700">Testimoni</div>
           <h2 className="mt-2 text-3xl font-black md:text-4xl">Cerita dari peserta</h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-600 leading-8">
-            Pengalaman peserta yang sudah belajar bersama kami, dari yang benar-benar baru mulai sampai yang akhirnya berani menyetir sendiri.
+            Cerita dari mereka yang dulunya deg-degan pegang setir, sekarang udah berani nyetir sendiri.
           </p>
         </div>
 
@@ -358,9 +358,9 @@ export default function EliteDrivingAcademyWebsite() {
         <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:px-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <div className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-700">Lokasi</div>
-            <h2 className="mt-2 text-3xl font-black md:text-4xl">Area layanan dan kontak</h2>
+            <h2 className="mt-2 text-3xl font-black md:text-4xl">Lokasi dan kontak</h2>
             <p className="mt-4 leading-8 text-slate-600">
-              Elite Driving Academy melayani area Purwokerto dan Banyumas. Informasi titik jemput, jadwal latihan, dan detail lokasi dapat dikonfirmasi langsung melalui WhatsApp.
+              Elite Driving Academy melayani Purwokerto dan Banyumas. Soal titik jemput, jadwal latihan, atau detail lokasi, tanya aja langsung lewat WhatsApp.
             </p>
 
             <div className="mt-8 grid gap-4">
@@ -402,7 +402,7 @@ export default function EliteDrivingAcademyWebsite() {
                 </div>
                 <h3 className="mt-5 text-2xl font-black">Lokasi Google Maps</h3>
                 <p className="mt-4 max-w-lg leading-8 text-white/85">
-                  Lokasi kursus sudah terhubung ke Google Maps. Pengunjung bisa langsung lihat titik lokasi, buka rute, dan navigasi tanpa harus menebak-nebak alamat.
+                  Lokasi kursus udah ada di Google Maps. Tinggal klik buat lihat titiknya, buka rute, dan navigasi tanpa nebak-nebak alamat.
                 </p>
 
                 <div className="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-white p-2 shadow-lg shadow-black/10">
@@ -447,9 +447,9 @@ export default function EliteDrivingAcademyWebsite() {
       <section id="form-pemesanan" className="mx-auto max-w-7xl px-6 py-16 md:px-10">
         <div className="mb-10 text-center">
           <div className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-700">Form pemesanan</div>
-          <h2 className="mt-2 text-3xl font-black md:text-4xl">Isi data, lalu lanjut pembayaran lewat WhatsApp</h2>
+          <h2 className="mt-2 text-3xl font-black md:text-4xl">Isi data, lanjut bayar lewat WhatsApp</h2>
           <p className="mx-auto mt-4 max-w-3xl leading-8 text-slate-600">
-            Form ini dibuat supaya admin menerima data lebih rapi: nama, nomor, pilihan paket, jadwal, transmisi, dan lokasi latihan (alamat jemput hanya untuk paket Mobil Pribadi). Sesekali teknologi memang bisa dipakai untuk hal yang benar.
+            Isi form singkat ini biar admin langsung tahu kamu mau paket apa, kapan, dan di mana. Alamat jemput cuma buat paket Mobil Pribadi.
           </p>
         </div>
 
@@ -459,7 +459,7 @@ export default function EliteDrivingAcademyWebsite() {
               <div className="grid gap-5 md:grid-cols-2">
                 <div className="md:col-span-2">
                   <label htmlFor="nama" className="mb-2 block text-sm font-semibold">Nama lengkap</label>
-                  <Input id="nama" name="nama" autoComplete="name" value={form.name} onChange={(e) => onChange("name", e.target.value)} placeholder="Masukkan nama lengkap" className="h-12 rounded-2xl" />
+                  <Input id="nama" name="nama" autoComplete="name" value={form.name} onChange={(e) => onChange("name", e.target.value)} placeholder="Nama lengkap kamu" className="h-12 rounded-2xl" />
                 </div>
                 <div>
                   <label htmlFor="telepon" className="mb-2 block text-sm font-semibold">Nomor WhatsApp</label>
@@ -487,12 +487,10 @@ export default function EliteDrivingAcademyWebsite() {
                     <select id="transmisi" name="transmisi" value={form.transmission} onChange={(e) => onChange("transmission", e.target.value)} className="h-12 w-full rounded-2xl border border-input bg-background px-3 text-sm">
                       <option value="Manual">Manual</option>
                       <option value="Matic">Matic</option>
-                      <option value="Belum tahu">Belum tahu</option>
                     </select>
                   ) : (
-                    <div id="transmisi" className="flex h-12 items-center justify-between gap-3 rounded-2xl border border-input bg-slate-50 px-3 text-sm">
+                    <div id="transmisi" className="flex h-12 items-center rounded-2xl border border-input bg-slate-50 px-3 text-sm">
                       <span className="font-semibold">Manual</span>
-                      <span className="text-xs text-slate-500">Mobil latihan kami manual</span>
                     </div>
                   )}
                 </div>
@@ -500,7 +498,7 @@ export default function EliteDrivingAcademyWebsite() {
                   <div className="md:col-span-2">
                     <label htmlFor="alamat" className="mb-2 block text-sm font-semibold">Alamat jemput</label>
                     <Input id="alamat" name="alamat" autoComplete="street-address" value={form.pickup} onChange={(e) => onChange("pickup", e.target.value)} placeholder="Alamat lengkap, contoh: Sokaraja, Banyumas" className="h-12 rounded-2xl" />
-                    <p className="mt-2 text-xs leading-5 text-slate-500">Khusus paket Mobil Pribadi (area Banyumas). Isi alamat selengkap mungkin supaya admin mudah konfirmasi.</p>
+                    <p className="mt-2 text-xs leading-5 text-slate-500">Khusus paket Mobil Pribadi (area Banyumas). Tulis alamat selengkap mungkin ya, biar admin gampang konfirmasi.</p>
                   </div>
                 ) : (
                   <div className="md:col-span-2">
@@ -508,7 +506,7 @@ export default function EliteDrivingAcademyWebsite() {
                     <div className="flex flex-col gap-3 rounded-2xl border border-emerald-900/10 bg-emerald-50/60 p-4 sm:flex-row sm:items-center sm:justify-between">
                       <div className="flex items-start gap-3 text-sm leading-6 text-slate-700">
                         <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
-                        <span>Latihan dilakukan di tempat latihan kami sesuai lokasi di Google Maps. Paket ini tidak ada layanan jemput.</span>
+                        <span>Latihannya di tempat latihan kami, lokasinya ada di Google Maps. Paket ini nggak ada layanan jemput.</span>
                       </div>
                       <a href={mapsUrl} target="_blank" rel="noreferrer" className="shrink-0 text-sm font-semibold text-emerald-800 underline underline-offset-4 hover:text-emerald-900">
                         Lihat di Maps
@@ -542,7 +540,7 @@ export default function EliteDrivingAcademyWebsite() {
                   </a>
                 </Button>
                 <p className="mt-4 text-sm leading-6 text-white/85">
-                  Tombol ini akan membuka WhatsApp dengan format pesan otomatis untuk konfirmasi dan pembayaran.
+                  Tombol ini bakal buka WhatsApp dengan pesan yang sudah terisi otomatis, tinggal kirim.
                 </p>
               </CardContent>
             </Card>
@@ -576,7 +574,7 @@ export default function EliteDrivingAcademyWebsite() {
               <div className="mt-1 text-sm text-white/70">Precision Driving School • Kursus Mengemudi Purwokerto</div>
             </div>
           </div>
-          <div className="text-sm text-white/70">© 2026 Elite Driving Academy. Dibuat untuk pemesanan yang lebih rapi dan lebih cepat.</div>
+          <div className="text-sm text-white/70">© 2026 Elite Driving Academy. Belajar nyetir jadi lebih gampang.</div>
         </div>
       </footer>
     </div>
