@@ -31,6 +31,8 @@ export default function EliteDrivingAcademyWebsite() {
   const waNumber = "6287734799346";
   const mapsUrl = "https://maps.app.goo.gl/j4EeCusHbb7MkGhg9";
   const isMobilPribadi = form.packageName === "Mobil Pribadi";
+  // Mobil kursus hanya manual. Pilihan transmisi hanya berlaku untuk Mobil Pribadi.
+  const transmission = isMobilPribadi ? form.transmission : "Manual";
 
   const packages = [
     {
@@ -114,7 +116,7 @@ export default function EliteDrivingAcademyWebsite() {
       `No. WhatsApp: ${encodeURIComponent(form.phone || "-")}%0A` +
       `Paket: ${form.packageName}%0A` +
       `Jadwal: ${form.schedule}%0A` +
-      `Transmisi: ${form.transmission}%0A` +
+      `Transmisi: ${transmission}%0A` +
       (isMobilPribadi
         ? `Alamat Jemput: ${encodeURIComponent(form.pickup || "-")}%0A`
         : `Lokasi Latihan: ${encodeURIComponent(mapsUrl)}%0A`) +
@@ -481,11 +483,18 @@ export default function EliteDrivingAcademyWebsite() {
                 </div>
                 <div>
                   <label htmlFor="transmisi" className="mb-2 block text-sm font-semibold">Transmisi</label>
-                  <select id="transmisi" name="transmisi" value={form.transmission} onChange={(e) => onChange("transmission", e.target.value)} className="h-12 w-full rounded-2xl border border-input bg-background px-3 text-sm">
-                    <option value="Manual">Manual</option>
-                    <option value="Matic">Matic</option>
-                    <option value="Belum tahu">Belum tahu</option>
-                  </select>
+                  {isMobilPribadi ? (
+                    <select id="transmisi" name="transmisi" value={form.transmission} onChange={(e) => onChange("transmission", e.target.value)} className="h-12 w-full rounded-2xl border border-input bg-background px-3 text-sm">
+                      <option value="Manual">Manual</option>
+                      <option value="Matic">Matic</option>
+                      <option value="Belum tahu">Belum tahu</option>
+                    </select>
+                  ) : (
+                    <div id="transmisi" className="flex h-12 items-center justify-between gap-3 rounded-2xl border border-input bg-slate-50 px-3 text-sm">
+                      <span className="font-semibold">Manual</span>
+                      <span className="text-xs text-slate-500">Mobil latihan kami manual</span>
+                    </div>
+                  )}
                 </div>
                 {isMobilPribadi ? (
                   <div className="md:col-span-2">
@@ -524,7 +533,7 @@ export default function EliteDrivingAcademyWebsite() {
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Nomor WA</span><span className="min-w-0 break-words text-right font-semibold">{form.phone || "-"}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Paket</span><span className="font-semibold">{form.packageName}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Jadwal</span><span className="font-semibold">{form.schedule}</span></div>
-                  <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Transmisi</span><span className="font-semibold">{form.transmission}</span></div>
+                  <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>Transmisi</span><span className="font-semibold">{transmission}</span></div>
                   <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/10 p-3"><span>{isMobilPribadi ? "Alamat jemput" : "Lokasi"}</span><span className="min-w-0 break-words text-right font-semibold">{isMobilPribadi ? form.pickup || "-" : "Tempat latihan (Maps)"}</span></div>
                 </div>
                 <Button asChild className="mt-6 w-full rounded-2xl bg-yellow-300 py-6 text-base font-bold text-slate-900 hover:bg-yellow-200">
